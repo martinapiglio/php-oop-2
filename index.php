@@ -17,6 +17,8 @@
     <title>PHP OOP 2</title>
     <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
 <body>
@@ -36,8 +38,20 @@
             <div class="card-body">
                 <h5 class="card-title"><?= $foodProd->name ?></h5>
                 <p><strong><i><?= $foodProd->brand ?></i></strong></p>
-                <p><?= $foodProd->category ?></p>
                 <p class="card-text"> <small><?= $foodProd->type ?></small> </p>
+                
+                <?php 
+                    if($foodProd->category == 'dog'){
+                ?>
+                        <i class="fa-solid fa-dog pb-3"></i>
+                <?php
+                    } else if($foodProd->category == 'cat') {
+                ?>
+                        <i class="fa-solid fa-cat pb-3"></i>
+                <?php
+                    }
+                ?>
+
                 <p class="card-text"><?= $foodProd->description ?></p>
                 <p class="card-text"><?= $foodProd->price ?> €</p>
                 
@@ -64,7 +78,19 @@
             <div class="card-body">
                 <h5 class="card-title"><?= $toy->name ?></h5>
                 <p><strong><i><?= $toy->brand ?></i></strong></p>
-                <p><?= $toy->category ?></p>
+
+                <?php 
+                    if($toy->category == 'dog'){
+                ?>
+                        <i class="fa-solid fa-dog pb-3"></i>
+                <?php
+                    } else if($toy->category == 'cat') {
+                ?>
+                        <i class="fa-solid fa-cat pb-3"></i>
+                <?php
+                    }
+                ?>
+
                 <p> <strong>Color:</strong> <?= $toy->color ?> </p>
                 <p> <strong>Material:</strong> <?= $toy->material ?> </p>
                 <p class="card-text"><?= $toy->description ?></p>
@@ -93,7 +119,19 @@
             <div class="card-body">
                 <h5 class="card-title"><?= $medProd->name ?></h5>
                 <p><strong><i><?= $medProd->brand ?></i></strong></p>
-                <p><?= $medProd->category ?></p>
+
+                <?php 
+                    if($medProd->category == 'dog'){
+                ?>
+                        <i class="fa-solid fa-dog pb-3"></i>
+                <?php
+                    } else if($medProd->category == 'cat') {
+                ?>
+                        <i class="fa-solid fa-cat pb-3"></i>
+                <?php
+                    }
+                ?>
+
                 <p> <strong>Type:</strong> <?= $medProd->type ?> </p>
                 <p class="card-text"><?= $medProd->description ?></p>
                 <p class="card-text"><?= $medProd->price ?> €</p>

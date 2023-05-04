@@ -11,6 +11,6 @@ $toys[] = new Toy('Skein', 'https://picsum.photos/180/130', 'Schesir', 'Lorem ip
 $toys[] = new Toy('Scratcher', 'https://picsum.photos/180/130', 'Gourmet', 'Lorem ipsum dolor sit amet consectetur', 'cat', 10, 'Beige', 'Wicker');
 
 $medicine[] = new Medicine('Soft Gras', 'https://picsum.photos/180/130', 'Purina', 'Lorem ipsum dolor sit amet consectetur', 'cat', 10, 'catnip', false);
-$medicine[] = new Medicine('Frontline', 'https://picsum.photos/180/130', 'eFarma', 'Lorem ipsum dolor sit amet consectetur', 'cat', 9, 'flea repellent', false);
+$medicine[] = new Medicine('Frontline', 'https://picsum.photos/180/130', 'eFarma', 'Lorem ipsum dolor sit amet consectetur', 'dog', 9, 'flea repellent', false);
 
 ?>
