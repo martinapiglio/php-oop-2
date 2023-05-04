@@ -1,3 +1,10 @@
+<?php
+
+    require_once './Models/Product.php';
+    require_once 'db.php'
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +14,10 @@
     <title>PHP OOP 2</title>
 </head>
 <body>
-    
+
+<?php 
+    foreach($products as $product) echo $product->price
+?>
+
 </body>
 </html>
