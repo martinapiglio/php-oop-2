@@ -1,6 +1,9 @@
 <?php
 
     require_once './Models/Product.php';
+    require_once './Models/Products/Food.php';
+    require_once './Models/Products/Toy.php';
+    require_once './Models/Products/Medicine.php';
     require_once 'db.php'
 
 ?>
@@ -16,7 +19,7 @@
 <body>
 
 <?php 
-    foreach($products as $product) echo $product->price
+    foreach($products as $product) echo $product->type
 ?>
 
 </body>
