@@ -18,9 +18,6 @@
 </head>
 <body>
 
-<?php 
-    foreach($products as $product) echo $product->type
-?>
 
 </body>
 </html>
