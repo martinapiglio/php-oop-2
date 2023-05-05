@@ -3,7 +3,16 @@
     trait Discountable {
 
         protected $discount;
-    
+
+        public function setDiscount($discount) {
+
+            if (!($discount < 10) && !($discount > 50)) {
+                $this->discount = $discount;
+            } else {
+                throw new Exception("Please insert a valid discount number, between 10 and 50");
+            };
+        }    
+
         public function getDiscount() {
             return $this->discount;
         }
@@ -16,7 +25,7 @@
                 $finalPrice = $fullPrice;
             }
 
-            return number_format($finalPrice, 2);
+            return number_format($finalPrice, 2) . ' €';
         }
 
     }

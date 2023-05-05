@@ -34,6 +34,14 @@
         $scratcher,
         $softGras,
         $frontline
-    ]
+    ];
+
+    // page shows error message id 10<discount<50
+    try {
+        $products[9]->setDiscount(60);    
+    } catch (Exception $e){
+        echo $e;
+        // echo $e->getMessage();   to get only the text message
+    };
 
 ?>
