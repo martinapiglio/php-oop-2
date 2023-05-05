@@ -1,5 +1,10 @@
 <?php
 
+    require_once './Models/Product.php';
+    require_once './Models/Products/Food.php';
+    require_once './Models/Products/Toy.php';
+    require_once './Models/Products/Medicine.php';
+
     $categories = [
         new Category("dog", "fa-dog"),
         new Category("cat", "fa-cat"),
