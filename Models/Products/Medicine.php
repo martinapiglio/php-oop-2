@@ -1,14 +1,30 @@
 <?php
 
-    class Medicine extends Product {
-        public $type;
-        public $prescription;
+    require_once './Models/Product.php';
 
-        public function __construct(string $name, string $img, string $brand, string $description, string $category, int $price, string $type, bool $prescription) {
+    class Medicine extends Product {
+        protected $type;
+        protected $prescription;
+
+        public function __construct(string $name, string $img, string $brand, string $description, Category $category, float $price, string $type, bool $prescription) {
 
             parent::__construct($name, $img, $brand, $description, $category, $price);
             $this -> type = $type;
             $this -> prescription = $prescription;
+        }
+
+        public function getType() {
+            return $this->type;
+        }
+
+        public function getPrescription() {
+
+            if($this->prescription == true) {
+                return 'yes';
+            } else {
+                return 'no';
+            };
+
         }
     }
 

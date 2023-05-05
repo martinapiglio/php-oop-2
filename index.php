@@ -25,120 +25,63 @@
 
     <div class="container py-3">
 
-        <h1 class="p-2">Food</h1>
+        <h1 class="p-2">Animal Shop</h1>
 
-        <div class="d-flex d-row justify-content-between">
-
-            <?php
-                foreach ($food as $foodProd) {
-            ?>
-
-            <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="<?= $foodProd->img ?>" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title"><?= $foodProd->name ?></h5>
-                <p><strong><i><?= $foodProd->brand ?></i></strong></p>
-                <p class="card-text"> <small><?= $foodProd->type ?></small> </p>
-                
-                <?php 
-                    if($foodProd->category == 'dog'){
-                ?>
-                        <i class="fa-solid fa-dog pb-3"></i>
-                <?php
-                    } else if($foodProd->category == 'cat') {
-                ?>
-                        <i class="fa-solid fa-cat pb-3"></i>
-                <?php
-                    }
-                ?>
-
-                <p class="card-text"><?= $foodProd->description ?></p>
-                <p class="card-text"><?= $foodProd->price ?> €</p>
-                
-                <a href="#" class="btn btn-dark">Add to Chart</a>
-            </div>
-            </div>
-                
-            <?php
-                }
-            ?>
-
-        </div>
-
-        <h1 class="p-2">Toys</h1>
-
-        <div class="d-flex d-row justify-content-between">
+        <div class="d-flex d-row gap-5 flex-wrap">
 
             <?php
-                foreach ($toys as $toy) {
+                foreach ($products as $product) {
             ?>
 
-            <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="<?= $toy->img ?>" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title"><?= $toy->name ?></h5>
-                <p><strong><i><?= $toy->brand ?></i></strong></p>
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="<?= $product->img ?>" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title text-info">
+                                <?= $product->name ?>
+                            </h5>
+                            <strong>
+                                <i><?= $product->brand ?></i>
+                            </strong>
+                                <br>
+                            <small>
+                                <i class="fa-solid <?= $product->getCategory()->getIcon() ?> my-3"></i>
+                            </small>
 
-                <?php 
-                    if($toy->category == 'dog'){
-                ?>
-                        <i class="fa-solid fa-dog pb-3"></i>
-                <?php
-                    } else if($toy->category == 'cat') {
-                ?>
-                        <i class="fa-solid fa-cat pb-3"></i>
-                <?php
-                    }
-                ?>
+                            <p>
+                                <?php
 
-                <p> <strong>Color:</strong> <?= $toy->color ?> </p>
-                <p> <strong>Material:</strong> <?= $toy->material ?> </p>
-                <p class="card-text"><?= $toy->description ?></p>
-                <p class="card-text"><?= $toy->price ?> €</p>
-                
-                <a href="#" class="btn btn-dark">Add to Chart</a>
-            </div>
-            </div>
-                
-            <?php
-                }
-            ?>
+                                    switch(get_class($product)) {
 
-        </div>
+                                        case 'Food':
+                                        echo "<strong>Composition</strong>: " . $product->getFoodType();
+                                        break;
 
-        <h1 class="p-2">Medicine</h1>
+                                        case 'Toy':
+                                        echo "<strong>Material</strong>: " .  $product->getMaterial();
+                                        break;
 
-        <div class="d-flex d-row gap-5">
+                                        case 'Medicine':
+                                        echo "<strong>Type</strong>: " .  $product->getType() . "<br> <strong>Prescription</strong>: " . $product->getPrescription();
+                                        break;
 
-            <?php
-                foreach ($medicine as $medProd) {
-            ?>
+                                        default: 
+                                        echo "<br>";
+                                        break;
+                                    }
 
-            <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="<?= $medProd->img ?>" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title"><?= $medProd->name ?></h5>
-                <p><strong><i><?= $medProd->brand ?></i></strong></p>
+                                ?>
+                                </p>
 
-                <?php 
-                    if($medProd->category == 'dog'){
-                ?>
-                        <i class="fa-solid fa-dog pb-3"></i>
-                <?php
-                    } else if($medProd->category == 'cat') {
-                ?>
-                        <i class="fa-solid fa-cat pb-3"></i>
-                <?php
-                    }
-                ?>
-
-                <p> <strong>Type:</strong> <?= $medProd->type ?> </p>
-                <p class="card-text"><?= $medProd->description ?></p>
-                <p class="card-text"><?= $medProd->price ?> €</p>
-                
-                <a href="#" class="btn btn-dark">Add to Chart</a>
-            </div>
-            </div>
+                            <p class="card-text">
+                                <?= $product->description ?>
+                            </p>
+                            <p class="card-text">
+                                <?= $product->getPrice() ?>
+                            </p>
+                            
+                            <a href="#" class="btn btn-info text-white">Add to Chart</a>
+                        </div>
+                    </div>
                 
             <?php
                 }
