@@ -20,8 +20,8 @@
     $skein = new Toy('Skein', 'https://picsum.photos/170/110', 'Schesir', 'Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur.', $categories[1], 6.10, 'Blue', 'Wool');
     $scratcher = new Toy('Scratcher', 'https://picsum.photos/170/110', 'Gourmet', 'Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur.', $categories[1], 10.25, 'Beige', 'Wicker');
 
-    $softGras = new Medicine('Soft Gras', 'https://picsum.photos/170/110', 'Purina', 'Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur.', $categories[1], 10.50, 'Catnip', false);
-    $frontline = new Medicine('Frontline', 'https://picsum.photos/170/110', 'eFarma', 'Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur.', $categories[0], 9.50, 'Flea repellent', true);
+    $softGras = new Medicine('Soft Gras', 'https://picsum.photos/170/110', 'Purina', 'Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur.', $categories[1], 10.50, 'Catnip', false, 20);
+    $frontline = new Medicine('Frontline', 'https://picsum.photos/170/110', 'eFarma', 'Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur.', $categories[0], 9.50, 'Flea repellent', true, 15);
 
     $products = [
         $royalCaninPuppy,
