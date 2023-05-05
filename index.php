@@ -71,9 +71,24 @@
                             <p class="card-text">
                                 <?= $product->description ?>
                             </p>
-                            <p class="card-text">
-                                <?= $product->getPrice() ?>
-                            </p>
+
+                            <?php
+                                if(get_class($product) == 'Food') {
+                            ?>
+                                    <div class="d-flex d-row justify-content-between card-text pb-3">
+                                        <div> <?= $product->getDiscountedPrice($product->getPrice(), $product->getDiscount()) ?> € </div>
+                                        <del class="text-danger">  <?= $product->getPrice() ?> €  </del>
+                                    </div>
+
+                            <?php
+                                } else {
+                            ?>
+                                    <p class="card-text">
+                                        <?= $product->getPrice() ?> €
+                                    </p>
+                            <?php
+                                }
+                            ?>
                             
                             <a href="#" class="btn btn-info text-white">Add to Chart</a>
                         </div>
